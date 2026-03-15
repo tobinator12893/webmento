@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <!-- Blue rounded background -->
+  <rect width="180" height="180" rx="40" fill="#2A5CFF"/>
+  <!-- White circle ring -->
+  <circle cx="90" cy="90" r="44" fill="none" stroke="white" stroke-width="14"/>
+  <!-- White center dot -->
+  <circle cx="90" cy="90" r="16" fill="white"/>
+</svg>
