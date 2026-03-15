@@ -1,8 +1,45 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, memo } from "react";
+import dynamic from "next/dynamic";
 import { motion, useInView } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+const Hyperspeed = dynamic(
+  () => import("@/components/ui/Hyperspeed").then((m) => m.Hyperspeed),
+  { ssr: false }
+);
+
+const WarpBackground = memo(function WarpBackground() {
+  return (
+    <>
+      <div className="absolute inset-0 z-0 opacity-40">
+        <Hyperspeed effectOptions={{ ...warpOptions, fov: 100, speedUp: 1.5 }} />
+      </div>
+      <div className="absolute inset-0 z-0 bg-ink/30" />
+    </>
+  );
+});
+
+const warpOptions = {
+  distortion: "turbulentDistortion",
+  length: 400,
+  roadWidth: 10,
+  islandWidth: 2,
+  lanesPerRoad: 3,
+  fov: 90,
+  fovSpeedUp: 110,
+  speedUp: 1.8,
+  colors: {
+    roadColor: 0x080810,
+    islandColor: 0x0a0a18,
+    background: 0x0a0a1e,
+    shoulderLines: 0x1a2a60,
+    brokenLines: 0x1a2a60,
+    leftCars: [0x2a5cff, 0x1a3fd4, 0x5c7fff],
+    rightCars: [0xff4d1c, 0xff7a4d, 0xffa07a],
+    sticks: 0x2a5cff,
+  },
+};
 
 const plans = [
   {
@@ -105,12 +142,18 @@ function PricingCard({
           transformStyle: "preserve-3d",
           transition: "transform 0.15s ease",
         }}
-        className={`relative rounded-2xl p-8 border h-full flex flex-col cursor-default ${
+        className={`relative rounded-2xl p-8 border h-full flex flex-col cursor-default overflow-hidden ${
           plan.featured
             ? "bg-ink border-accent/40 shadow-[0_0_0_1px_rgba(42,92,255,0.3),0_24px_64px_rgba(42,92,255,0.18)]"
             : "bg-white border-black/8 hover:border-black/14 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
         } transition-all duration-300`}
       >
+        {/* Warp background for featured card */}
+        {plan.featured && <WarpBackground />}
+
+        {/* All visible content sits above the warp bg */}
+        <div className="relative z-10 flex flex-col flex-1">
+
         {/* Featured badge */}
         {plan.badge && (
           <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-accent text-white text-[11px] font-[500] uppercase tracking-[0.12em] px-4 py-1 rounded-full">
@@ -200,6 +243,8 @@ function PricingCard({
           {plan.cta}
           <ArrowRight size={14} />
         </a>
+
+        </div>{/* end z-10 wrapper */}
       </div>
     </motion.div>
   );
