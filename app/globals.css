@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+:root {
+  --ink: #0f0f0f;
+  --paper: #f5f2ec;
+  --card: #edeae2;
+  --accent: #2a5cff;
+  --accent-dark: #1a3fd4;
+  --accent2: #ff4d1c;
+  --mid: #6b6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+/* Pastel Gradient Keyframes */
+@keyframes pastelRotate {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pastelRotateReverse {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.pastel-layer-1 {
+  background: conic-gradient(
+    from 0deg,
+    #a8c4ff,
+    #c4b5fd,
+    #ffc4b0,
+    #ffd6a5,
+    #a8e6cf,
+    #b8d4ff,
+    #c4b5fd,
+    #a8c4ff
+  );
+  animation: pastelRotate 12s linear infinite;
+}
+
+.pastel-layer-2 {
+  background: conic-gradient(
+    from 0deg,
+    #ffc4b0,
+    #a8c4ff,
+    #c4b5fd,
+    #a8e6cf,
+    #ffd6a5,
+    #b8d4ff,
+    #a8c4ff,
+    #ffc4b0
+  );
+  animation: pastelRotateReverse 16s linear infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(42, 92, 255, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(42, 92, 255, 0.6);
+}
+
+/* 3D Card Tilt */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Selection */
+::selection {
+  background: rgba(42, 92, 255, 0.2);
+  color: var(--ink);
+}
+
+/* Focus outline */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
