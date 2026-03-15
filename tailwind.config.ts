@@ -18,8 +18,8 @@ const config: Config = {
         mid: "#6b6b6b",
       },
       fontFamily: {
-        serif: ["DM Serif Display", "Georgia", "serif"],
-        sans: ["DM Sans", "system-ui", "sans-serif"],
+        serif: ["var(--font-dm-serif)", "Georgia", "serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
       animation: {
         "rotate-slow": "rotateSlow 8s linear infinite",

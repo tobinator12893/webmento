@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -61,15 +62,14 @@ export function Footer() {
               {[
                 { label: "Impressum", href: "/impressum" },
                 { label: "Datenschutz", href: "/datenschutz" },
-                { label: "AGB", href: "/agb" },
               ].map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="block text-[13px] text-white/45 hover:text-white/80 font-[300] mb-2 transition-colors cursor-pointer"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

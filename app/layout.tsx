@@ -1,5 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
+
+const dmSerifDisplay = DM_Serif_Display({
+  weight: ["400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm-serif",
+});
+
+const dmSans = DM_Sans({
+  weight: ["300", "400", "500"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
 
 export const metadata: Metadata = {
   title: "Webmento – Faire Websites für lokale Betriebe",
@@ -34,19 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="de" className={`${dmSerifDisplay.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );
