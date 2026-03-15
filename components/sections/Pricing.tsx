@@ -21,7 +21,7 @@ const WarpBackground = memo(function WarpBackground() {
 });
 
 const warpOptions = {
-  distortion: "turbulentDistortion",
+  distortion: "turbulentDistortion" as const,
   length: 400,
   roadWidth: 10,
   islandWidth: 2,
