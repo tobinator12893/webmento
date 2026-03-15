@@ -1,3 +1,4 @@
+import { JsonLd } from "@/components/JsonLd";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Problem } from "@/components/sections/Problem";
@@ -10,6 +11,7 @@ import { Footer } from "@/components/sections/Footer";
 export default function Home() {
   return (
     <main>
+      <JsonLd />
       <Navbar />
       <Hero />
       <Problem />
