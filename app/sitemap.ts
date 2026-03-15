@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://www.webmento.de";
+const BASE_URL = "https://webmento.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

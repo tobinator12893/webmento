@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-const BASE_URL = "https://www.webmento.de";
+const BASE_URL = "https://webmento.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

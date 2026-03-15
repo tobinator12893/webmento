@@ -9,12 +9,12 @@ export function JsonLd() {
       // LocalBusiness — für lokale Suchergebnisse (Maps, "in der Nähe")
       {
         "@type": ["LocalBusiness", "ProfessionalService"],
-        "@id": "https://www.webmento.de/#business",
+        "@id": "https://webmento.vercel.app/#business",
         name: "Webmento",
         alternateName: "Webmento – Faire Websites für lokale Betriebe",
         description:
           "Professionelle Websites für Handwerker, Friseure, Gastronomen und lokale Betriebe im Raum Rhein-Neckar. Faire Festpreise, schnelle Umsetzung, alles inklusive.",
-        url: "https://www.webmento.de",
+        url: "https://webmento.vercel.app",
         email: "hallo@webmento.de",
         founder: {
           "@type": "Person",
@@ -57,31 +57,31 @@ export function JsonLd() {
       // WebSite — für Sitelinks-Searchbox
       {
         "@type": "WebSite",
-        "@id": "https://www.webmento.de/#website",
-        url: "https://www.webmento.de",
+        "@id": "https://webmento.vercel.app/#website",
+        url: "https://webmento.vercel.app",
         name: "Webmento",
         description:
           "Faire Websites für lokale Betriebe im Raum Rhein-Neckar",
         inLanguage: "de-DE",
         publisher: {
-          "@id": "https://www.webmento.de/#business",
+          "@id": "https://webmento.vercel.app/#business",
         },
       },
 
       // WebPage — Hauptseite
       {
         "@type": "WebPage",
-        "@id": "https://www.webmento.de/#webpage",
-        url: "https://www.webmento.de",
+        "@id": "https://webmento.vercel.app/#webpage",
+        url: "https://webmento.vercel.app",
         name: "Webmento – Faire Websites für lokale Betriebe",
         description:
           "Professionelle Websites ab 490 €. In 5–10 Tagen fertig. Domain, Hosting, DSGVO & Impressum inklusive.",
         inLanguage: "de-DE",
         isPartOf: {
-          "@id": "https://www.webmento.de/#website",
+          "@id": "https://webmento.vercel.app/#website",
         },
         about: {
-          "@id": "https://www.webmento.de/#business",
+          "@id": "https://webmento.vercel.app/#business",
         },
         breadcrumb: {
           "@type": "BreadcrumbList",
@@ -90,7 +90,7 @@ export function JsonLd() {
               "@type": "ListItem",
               position: 1,
               name: "Start",
-              item: "https://www.webmento.de",
+              item: "https://webmento.vercel.app",
             },
           ],
         },
@@ -99,12 +99,12 @@ export function JsonLd() {
       // Offer / Pricing — für Rich Snippets in Suchergebnissen
       {
         "@type": "Service",
-        "@id": "https://www.webmento.de/#service-starter",
+        "@id": "https://webmento.vercel.app/#service-starter",
         name: "Starter Website",
         description:
           "1-seitige Website (Landingpage) inkl. Kontaktformular, mobiloptimiert, Impressum & Datenschutz, 1 Jahr Hosting & Domain",
         provider: {
-          "@id": "https://www.webmento.de/#business",
+          "@id": "https://webmento.vercel.app/#business",
         },
         offers: {
           "@type": "Offer",
@@ -126,12 +126,12 @@ export function JsonLd() {
       },
       {
         "@type": "Service",
-        "@id": "https://www.webmento.de/#service-basis",
+        "@id": "https://webmento.vercel.app/#service-basis",
         name: "Basis Website",
         description:
           "Bis zu 5 Unterseiten, Galerie, SEO-Grundoptimierung, 1 Jahr Hosting, alle Pflichtseiten inklusive",
         provider: {
-          "@id": "https://www.webmento.de/#business",
+          "@id": "https://webmento.vercel.app/#business",
         },
         offers: {
           "@type": "Offer",
@@ -142,12 +142,12 @@ export function JsonLd() {
       },
       {
         "@type": "Service",
-        "@id": "https://www.webmento.de/#service-komplett",
+        "@id": "https://webmento.vercel.app/#service-komplett",
         name: "Komplett Website",
         description:
           "Bis zu 10 Unterseiten, Chat & AI Anbindung, erweiterte SEO, Logo-Design, 6 Monate Priorität-Support",
         provider: {
-          "@id": "https://www.webmento.de/#business",
+          "@id": "https://webmento.vercel.app/#business",
         },
         offers: {
           "@type": "Offer",
@@ -160,7 +160,7 @@ export function JsonLd() {
       // FAQ — häufige Fragen für Rich Results
       {
         "@type": "FAQPage",
-        "@id": "https://www.webmento.de/#faq",
+        "@id": "https://webmento.vercel.app/#faq",
         mainEntity: [
           {
             "@type": "Question",
